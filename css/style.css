@@ -76,7 +76,7 @@
   /* Contenedores y Secciones */
   .container { max-width: var(--container-width); margin: 0 auto; padding: 0 2rem; }
   section { padding: 8.5rem 0; overflow: visible; position: relative; }
-  .section-bg { background-color: var(--light-bg); }
+  .section-bg { background-color: #fff; }
   .section-dark { background-color: var(--primary-color); color: var(--light-text); }
   .section-dark h1, .section-dark h2, .section-dark h3 { color: var(--white-color); }
   .section-dark p { color: var(--light-text); opacity: 0.85; }
@@ -219,7 +219,7 @@
   .angled-divider-top { position: absolute; top: -1px; left: 0; width: 100%; line-height: 0; z-index: 10; }
   .angled-divider-top svg { display: block; width: 100%; }
   .angled-divider-bottom { position: absolute; bottom: -1px; left: 0; ; line-height: 0; z-index: 10; transform: rotate(180deg); }
-  .shape-fill { fill: var(--light-bg); }
+  .shape-fill {     fill: #fff }
   .shape-fill-dark { fill: var(--primary-color); }
   .shape-fill-footer { fill: var(--dark-text);}
   
@@ -260,7 +260,7 @@
   }
   .quirofanos-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+      grid-template-columns: 1.2fr 1fr; /* Dos columnas iguales */
       gap: 4rem; /* Espacio entre columnas */
       align-items: center; /* Alineación vertical */
   }
@@ -325,11 +325,12 @@
           max-height: 350px; /* Altura menor en móviles */
       }
   }
-  /* =================================== */
-  /* === FIN NUEVA SECCIÓN: QUIROFANOS === */
-  /* =================================== */
+
+.premium-gallery-container {
+    margin-top: 4rem; 
   
-  
+}
+
   /* --- Location Section --- */
   #location { position: relative; z-index: 4; }
   #location .container {
@@ -417,7 +418,7 @@
   #amenities .about-content ul li { padding-left: 35px; position: relative; margin-bottom: 1.2rem; font-size: 1rem; color: var(--dark-text); }
   #amenities .about-content ul li i { position: absolute; left: 0; top: 4px; color: var(--secondary-color); font-size: 1.1rem; width: 22px; height: 22px; background-color: rgba(40, 176, 152, 0.1); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; }
   #amenities .about-image img { width: 100%; height: auto; display: block; box-shadow: 0 20px 50px var(--shadow-medium); border-radius: var(--border-radius); position: relative; z-index: 2; }
-  #amenities .premium-gallery-container { margin-top: 0; padding: 0 1rem; width: 100%; }
+  #amenities .premium-gallery-container { margin-top: 0; padding: 0 1rem; width: 100%;  }
   #amenities .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; width: 100%; }
   #amenities .gallery-item { overflow: hidden; border-radius: var(--border-radius); box-shadow: 0 10px 30px var(--shadow-light); position: relative; cursor: pointer; transition: box-shadow var(--transition-main); height: 250px; }
   #amenities .gallery-item:hover { box-shadow: 0 18px 45px var(--shadow-medium); }
@@ -431,6 +432,180 @@
   .amenity-top-row { display: grid; gap: 5rem; align-items: center; margin-bottom: 5rem; }
   @media (min-width: 1024px) { .amenity-top-row { grid-template-columns: 1.2fr 1fr; } }
   @media (max-width: 1023px) { .amenity-top-row { grid-template-columns: 1fr; } }
+
+
+
+
+/* Estilos para el bloque con efecto aurora MÁS REALISTA */
+.aura-block {
+    margin-bottom: 30px; /* Espacio entre bloques */
+    border-radius: 15px; /* Bordes redondeados */
+    padding: 40px 30px; /* Espaciado interno */
+    color: #ffffff; /* Color del texto para buen contraste */
+    overflow: hidden; /* Asegura que el fondo no se salga */
+    position: relative; /* Necesario para la animación del fondo */
+
+    /* --- Fondo Aurora Boreal con Múltiples Capas --- */
+    background-color: #1a2e29; /* Color base sólido por si algo falla */
+
+    /* Capas de Gradiente (la primera está arriba) */
+    background-image:
+        /* Capa 1: Ondas más rápidas y sutiles (más transparentes) */
+        linear-gradient(
+            175deg, /* Ángulo inclinado */
+            rgba(1, 63, 51, 0) 0%, /* Transparente al inicio (#013f33) */
+            rgba(3, 126, 101, 0.3) 30%, /* Un verde ligeramente más vivo y semi-transparente */
+            rgba(26, 46, 41, 0.4) 70%, /* El otro color base semi-transparente (#1a2e29) */
+            rgba(1, 63, 51, 0) 100% /* Transparente al final */
+        ),
+        /* Capa 2: Base más lenta y opaca */
+        linear-gradient(
+            300deg, /* Ángulo diferente */
+            #013f33 0%,
+            #1a2e29 70%,
+             #055e4c 100% /* Añadimos un tercer tono para más variación */
+        );
+
+    /* Tamaños diferentes para que se muevan a distintas velocidades relativas */
+    background-size:
+        400% 400%, /* Tamaño para la Capa 1 */
+        300% 300%; /* Tamaño para la Capa 2 */
+
+    /* Aplicamos la animación */
+    animation: aura-flow 20s ease-in-out infinite; /* Más lenta y suave */
+}
+
+/* Keyframes para la animación de flujo tipo aurora */
+@keyframes aura-flow {
+    0% {
+        background-position:
+            0% 50%, /* Posición inicial Capa 1 */
+            0% 50%; /* Posición inicial Capa 2 */
+    }
+    50% {
+        background-position:
+            100% 50%, /* Posición media Capa 1 (se mueve más por el tamaño) */
+            80% 50%;  /* Posición media Capa 2 (se mueve menos) */
+    }
+    100% {
+        background-position:
+            0% 50%, /* Posición final Capa 1 */
+            0% 50%; /* Posición final Capa 2 */
+    }
+}
+
+
+/* --- El resto de los estilos (content-wrapper, text-content, etc.) --- */
+/* ---              pueden permanecer igual que antes               --- */
+
+/* Contenedor interno para el contenido (Flexbox para alinear) */
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+    align-content: center;
+    flex-direction: column;    /* Asegura que esté por encima del background */
+}
+
+/* Estilos para la parte del texto */
+.text-content {
+    flex-basis: 60%;
+    min-width: 250px;
+}
+
+.text-content h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 2em;
+    font-weight: bold;
+}
+.text-content-block h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 2em;
+    font-weight: bold;
+    color: #FFF;
+}
+.text-content-block p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #FFF;
+    text-align: center;
+}
+
+
+.text-content p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* Estilos para la parte de acción (botón/imagen) */
+.action-content {
+    flex-basis: 35%;
+    text-align: right;
+    min-width: 150px;
+
+    .a:hover {
+        color: #FFF;
+    }
+}
+
+/* Estilos para el botón (opcional, si usas uno) */
+.aura-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.aura-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+    color: #FFF;
+}
+
+
+
+
+/* --- Responsividad básica --- */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .action-content {
+        text-align: left;
+        margin-top: 20px;
+        
+    }
+    
+
+    .text-content h2 {
+        font-size: 1.6em;
+    }
+    .text-content-block h2 {
+        font-size: 1.6em;
+    }
+    .text-content-block p {
+        font-size: 1em;
+    }
+
+    .text-content p {
+        font-size: 1em;
+    }
+}
+
+
   
   /* --- Our Team Section --- */
   #our-team { z-index: 5; }
@@ -525,6 +700,10 @@
         text-decoration: none; /* Quita el subrayado del enlace */
         transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
     }
+    .contenedor-boton {
+        text-align: center; /* Centra el contenido inline/inline-block dentro del contenedor */
+        padding: 20px; /* Añade algo de espacio alrededor (opcional) */
+      }
 
     .whatsapp-float:hover {
         transform: scale(1.1); /* Agranda un poco al pasar el mouse */
