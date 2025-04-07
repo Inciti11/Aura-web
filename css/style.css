@@ -129,7 +129,9 @@ p.lead {
     margin-top: 25px;
 }
 
-/* Oculta por defecto la versión móvil */
+.solo-pc {
+    display: block; /* O inline-block si prefieres */
+}
 .solo-movil {
     display: none;
 }
@@ -141,7 +143,7 @@ p.lead {
     }
 
     .solo-movil {
-        display: block;
+        display: block; /* O inline-block si coincide con el .solo-pc */
     }
 }
 
@@ -2112,28 +2114,35 @@ section {
     position: fixed;
     width: 60px;
     height: 60px;
-    bottom: 40px;
-    right: 40px;
-    background-color: #25d366;
-    /* Color oficial de WhatsApp */
+    background-color: #25d366; /* Color oficial de WhatsApp */
     color: #FFF;
     border-radius: 50px;
     text-align: center;
-    font-size: 30px;
-    /* Tamaño del icono */
+    font-size: 30px; /* Tamaño del icono */
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    /* Asegura que esté por encima de otros elementos */
+    z-index: 1000; /* Ensure it's above most content */
     display: flex;
-    /* Para centrar el icono fácilmente */
     justify-content: center;
-    /* Centrado horizontal */
     align-items: center;
-    /* Centrado vertical */
     text-decoration: none;
-    /* Quita el subrayado del enlace */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* Transición suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+
+    /* --- Positioning --- */
+    /* 1. Default/Fallback Gap (e.g., 20px from edges) */
+    right: 20px;
+    bottom: 20px; /* Base gap */
+
+    /* 2. Enhance with Safe Area Inset */
+    /* Adds the safe area height (if any) to the base gap */
+    /* Requires viewport-fit=cover in the meta viewport tag */
+    bottom: calc(20px + env(safe-area-inset-bottom));
+    right: calc(20px + env(safe-area-inset-right)); /* Consider right inset too */
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1); /* Agranda un poco al pasar el mouse */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+    color: #FFF; /* Mantiene el color del icono */
 }
 
 .contenedor-boton {
@@ -2143,14 +2152,6 @@ section {
     /* Reduced top/bottom padding */
 }
 
-.whatsapp-float:hover {
-    transform: scale(1.1);
-    /* Agranda un poco al pasar el mouse */
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
-    /* Sombra más pronunciada */
-    color: #FFF;
-    /* Mantiene el color del icono */
-}
 
 /* --- Responsive --- */
 @media (max-width: 1024px) {
@@ -2309,6 +2310,14 @@ section {
         flex-basis: auto;
         /* Reset flex basis */
     }
+
+     /* Optional: Slightly smaller WhatsApp button on mobile screens */
+     .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        font-size: 28px;
+        /* Positioning logic with env() still applies */
+    }
 }
 
 @media (max-width: 576px) {
@@ -2359,16 +2368,3 @@ section {
 body.mobile-nav-active {
     overflow: hidden;
 }
-.footer-bottom {
-    background: #001a2c;
-    padding: 1.5rem 2rem;
-    text-align: center;
-    font-size: 12px;
-    color: #ccc;
-  }
-  
-  .legal-text {
-    margin-top: 1rem;
-    font-size: 11px;
-    color: #aaa;
-  }
