@@ -53,7 +53,9 @@ html {
     font-size: 16px;
     /* FIX: Prevent horizontal overflow at the highest level */
     width: 100%;
+    max-width: 100%; /* ADDED */
     overflow-x: hidden;
+    position: relative; /* ADDED - Can sometimes help contain positioned children */
 }
 
 body {
@@ -65,12 +67,15 @@ body {
     -moz-osx-font-smoothing: grayscale;
     /* FIX: Prevent horizontal overflow and handle long words */
     width: 100%;
+    max-width: 100%; /* ADDED */
     overflow-x: hidden;
     word-wrap: break-word;
     /* Deprecated but widely supported */
     overflow-wrap: break-word;
     /* Standard property */
+    position: relative; /* ADDED - Can sometimes help contain positioned children */
 }
+
 
 /* --- Tipografía --- */
 h1,
@@ -162,13 +167,28 @@ a:hover {
     max-width: var(--container-width);
     margin: 0 auto;
     padding: 0 2rem;
+    width: 100%; /* Ensure container takes full width up to max-width */
+    box-sizing: border-box; /* Already set by *, but good to be explicit */
 }
 
 section {
     padding: 8.5rem 0;
-    overflow: visible;
+    overflow: visible; /* Keep as visible unless a specific section needs hidden */
     position: relative;
+    width: 100%; /* ADDED - Ensure sections don't cause overflow */
+    max-width: 100%; /* ADDED */
+    box-sizing: border-box; /* ADDED */
 }
+
+/* ADD overflow containment to main structural elements */
+#main-header,
+main,
+#main-footer {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden; /* Prevent children from overflowing these main blocks */
+}
+
 
 .section-bg {
     background-color: #fff;
@@ -527,6 +547,9 @@ section {
     min-height: 80vh;
     height: calc(100vh - var(--header-height-current));
     max-height: 900px;
+    /* Ensure section itself doesn't overflow */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .background-slider {
@@ -734,29 +757,30 @@ section {
 }
 
 /* --- Divisores de Sección Creativos --- */
-.angled-divider-top {
-    position: absolute;
-    top: -1px;
-    left: 0;
-    width: 100%;
-    line-height: 0;
-    z-index: 10;
-}
-
-.angled-divider-top svg {
-    display: block;
-    width: 100%;
-}
-
+.angled-divider-top,
 .angled-divider-bottom {
     position: absolute;
-    bottom: -1px;
     left: 0;
-    ;
+    width: 100%;
     line-height: 0;
     z-index: 10;
+    overflow: hidden; /* Prevent potential SVG overflow */
+}
+.angled-divider-top {
+    top: -1px; /* Adjust overlap slightly if needed */
+}
+.angled-divider-bottom {
+    bottom: -1px; /* Adjust overlap slightly if needed */
     transform: rotate(180deg);
 }
+
+.angled-divider-top svg,
+.angled-divider-bottom svg {
+    display: block;
+    width: 100%;
+    height: auto; /* Allow height to scale */
+}
+
 
 .shape-fill {
     fill: #fff
@@ -1625,6 +1649,10 @@ section {
     /* Aplicamos la animación */
     animation: aura-flow 20s ease-in-out infinite;
     /* Más lenta y suave */
+
+    /* Added for overflow control */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Anula el border-radius en pantallas grandes (PC) */
@@ -1673,6 +1701,10 @@ section {
     align-content: center;
     flex-direction: column;
     /* Asegura que esté por encima del background */
+    width: 100%; /* Ensure wrapper doesn't cause overflow */
+    max-width: var(--container-width); /* Limit content width */
+    margin: 0 auto; /* Center content */
+    padding: 0 1rem; /* Add some padding */
 }
 
 /* Estilos para la parte del texto */
@@ -1747,6 +1779,7 @@ section {
         flex-direction: column;
         text-align: center;
         /* Adjusted for center align */
+        padding: 0; /* Adjust padding if needed */
     }
 
     .action-content {
@@ -2025,18 +2058,8 @@ section {
 }
 
 /* Red error text */
-#contact .angled-divider-bottom {
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    line-height: 0;
-    z-index: 10;
-    transform: rotate(180deg);
-}
+/* Removed duplicate definition for angled-divider-bottom inside #contact */
 
-#contact .angled-divider-bottom .shape-fill-footer {
-    fill: var(--dark-text);
-}
 
 /* FIX: Media query for smaller padding in contact form wrapper */
 @media (max-width: 400px) {
@@ -2053,7 +2076,7 @@ section {
     text-align: center;
     position: relative;
     z-index: 9;
-    margin-top: -1px;
+    margin-top: -1px; /* Overlap slightly with divider */
 }
 
 #main-footer p {
