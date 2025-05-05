@@ -669,7 +669,7 @@ main,
 
 /* Ajustado a ../assets/... */
 .slide:nth-child(2) {
-    background-image: url('../assets/imagenes/Consultorio/RoofTop CO.png');
+    background-image: url('../assets/imagenes/Consultorio/Rooftop.png');
     animation-delay: 6s;
 }
 
