@@ -1705,6 +1705,86 @@ main,
     margin: 0 auto; /* Center content */
     padding: 0 1rem; /* Add some padding */
 }
+.aura-block-first {
+    margin-bottom: 30px;
+    /* Espacio entre bloques */
+    padding: 40px 30px;
+    /* Espaciado interno */
+    color: #ffffff;
+    /* Color del texto para buen contraste */
+    overflow: hidden;
+    /* Asegura que el fondo no se salga */
+    position: relative;
+    /* Necesario para la animación del fondo */
+
+    /* --- Fondo Aurora Boreal con Múltiples Capas --- */
+    background-color: #1a2e29;
+    /* Color base sólido por si algo falla */
+
+    /* Capas de Gradiente (la primera está arriba) */
+    background-image:
+        /* Capa 1: Ondas más rápidas y sutiles (más transparentes) */
+        linear-gradient(175deg,
+            /* Ángulo inclinado */
+            rgba(1, 63, 51, 0) 0%,
+            /* Transparente al inicio (#013f33) */
+            rgba(3, 126, 101, 0.3) 30%,
+            /* Un verde ligeramente más vivo y semi-transparente */
+            rgba(26, 46, 41, 0.4) 70%,
+            /* El otro color base semi-transparente (#1a2e29) */
+            rgba(1, 63, 51, 0) 100%
+            /* Transparente al final */
+        ),
+        /* Capa 2: Base más lenta y opaca */
+        linear-gradient(300deg,
+            /* Ángulo diferente */
+            #013f33 0%,
+            #1a2e29 70%,
+            #055e4c 100%
+            /* Añadimos un tercer tono para más variación */
+        );
+
+    /* Tamaños diferentes para que se muevan a distintas velocidades relativas */
+    background-size:
+        400% 400%,
+        /* Tamaño para la Capa 1 */
+        300% 300%;
+    /* Tamaño para la Capa 2 */
+
+    /* Aplicamos la animación */
+    animation: aura-flow 20s ease-in-out infinite;
+    /* Más lenta y suave */
+
+    /* Added for overflow control */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Anula el border-radius en pantallas grandes (PC) */
+@media screen and (min-width: 1024px) {
+    .aura-block-first {
+        border-radius: 0;
+    }
+}
+
+
+
+/* Contenedor interno para el contenido (Flexbox para alinear) */
+.content-wrapper-first {
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+    align-content: center;
+    flex-direction: column;
+    /* Asegura que esté por encima del background */
+    width: 100%; /* Ensure wrapper doesn't cause overflow */
+    max-width: var(--container-width); /* Limit content width */
+    margin: 0 auto; /* Center content */
+    padding: 0 1rem; /* Add some padding */
+}
 
 /* Estilos para la parte del texto */
 .text-content {
