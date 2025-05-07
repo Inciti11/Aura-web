@@ -1771,19 +1771,19 @@ main,
 
 /* Contenedor interno para el contenido (Flexbox para alinear) */
 .content-wrapper-first {
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
+    display: flex; /* Asumido, ya que usas propiedades flex. Si no está, añádelo. */
+    justify-content: center; /* Centra los hijos verticalmente (en el eje principal, que es columna) */
+    align-items: center;     /* Centra los hijos horizontalmente (en el eje transversal) */
+    flex-wrap: wrap;         /* Permite que los elementos pasen a la siguiente línea/columna si no caben */
+    gap: 20px;               /* Añade un espacio de 20px entre los hijos */
     position: relative;
     z-index: 1;
-    align-content: center;
-    flex-direction: column;
-    /* Asegura que esté por encima del background */
-    width: 100%; /* Ensure wrapper doesn't cause overflow */
-    max-width: var(--container-width); /* Limit content width */
-    margin: 0 auto; /* Center content */
-    padding: 0 1rem; /* Add some padding */
+    align-content: center;   /* Alinea las líneas de contenido flexible (si hay wrap y múltiples líneas) */
+    flex-direction: column;  /* Apila los hijos verticalmente, uno encima del otro */
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
 /* Estilos para la parte del texto */
