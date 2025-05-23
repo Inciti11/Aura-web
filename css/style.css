@@ -778,6 +778,8 @@ main,
     display: block;
     width: 100%;
     height: auto; /* Allow height to scale */
+    fill: var(--primary-color) #013f33 ;
+;
 }
 
 
@@ -1954,11 +1956,7 @@ main,
     width: auto;
     margin-bottom: 15px;
 }
-.member-logo-HDQ img {
-    max-height: 110px;
-    width: auto;
-    margin-bottom: 15px;
-}
+
 
 .member-content h4 {
     font-size: 1.2em;
