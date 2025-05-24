@@ -1,20 +1,37 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" itemscope itemtype="http://schema.org/MedicalOrganization">
 
 <head>
     <meta charset="UTF-8">
+    <!-- Meta Tags SEO -->
+    <meta name="description" content="Aura Torre Médica - Centro médico premium en Barranquilla con consultorios modernos, quirófanos y ubicación estratégica para profesionales de la salud.">
+    <meta name="keywords" content="torre médica, consultorios médicos Barranquilla, quirófanos, inversión médica, clínica, salud, turismo médico">
+    <meta name="author" content="Aura Torre Médica">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Aura Torre Médica - Excelencia médica en Barranquilla">
+    <meta property="og:description" content="Descubre espacios médicos premium diseñados para elevar tu práctica profesional en el corazón del clúster médico de Barranquilla.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://auratorremedica.com">
+    <meta property="og:image" content="https://auratorremedica.com/assets/imagenes/Front/Web-aura.jpg">
+    <meta property="og:site_name" content="Aura Torre Médica">
+    <meta name="twitter:card" content="summary_large_image">
+    
     <!-- MODIFIED VIEWPORT TAG -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Aura Torre Medica</title>
+    <title>Aura Torre Medica | Consultorios y Quirófanos Premium en Barranquilla</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="./assets/imagenes/Logo/Logo Torre Médica Aurora-04.png">
 
-    <!-- Google Fonts - Poppins -->
+    <!-- Preconnect para fuentes externas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"></noscript>
+
+    <!-- Preload para recursos críticos -->
+    <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
 
     <!-- AOS Library CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -27,23 +44,58 @@
     <!-- === TU HOJA DE ESTILOS PERSONALIZADA === -->
     <link rel="stylesheet" href="css/style.css">
 
+    <!-- Schema Markup para MedicalOrganization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalOrganization",
+      "name": "Aura Torre Médica",
+      "image": "https://auratorremedica.com/assets/imagenes/Logo/Aura%20torre%20medica_01.png",
+      "@id": "https://auratorremedica.com",
+      "url": "https://auratorremedica.com",
+      "telephone": "+57 XXX XXX XXXX",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Calle 86 # 50 - 87",
+        "addressLocality": "Barranquilla",
+        "addressRegion": "Atlántico",
+        "postalCode": "080001",
+        "addressCountry": "CO"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 11.006349,
+        "longitude": -74.823400
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "08:00",
+        "closes": "18:00"
+      }
+    }
+    </script>
 </head>
 
 <body>
-
     <!-- Header -->
     <header id="main-header">
         <div class="container">
-            <a href="#pre-hero-banner" class="logo">
-                <img src="./assets/imagenes/Logo/Aura torre medica_01.png" alt="AURA Logo">
+            <a href="#pre-hero-banner" class="logo" aria-label="Aura Torre Médica - Inicio">
+                <img src="./assets/imagenes/Logo/Aura torre medica_01.png" alt="AURA Logo" width="180" height="60" loading="eager">
             </a>
-            <nav id="main-nav">
+            <nav id="main-nav" aria-label="Navegación principal">
                 <ul>
-                    <!-- Los enlaces del menú no se reordenan automáticamente, reflejan el orden original -->
                     <li><a href="#pre-hero-banner" class="active">Inicio</a></li>
-                    <li><a href="#gallery">Consultorios</a></li> <!-- Enlace a Consultorios -->
+                    <li><a href="#gallery">Consultorios</a></li>
                     <li><a href="#quirofanos">Quirófanos</a></li>
-                    <li><a href="#location">Ubicación</a></li> <!-- Enlace a Ubicación -->
+                    <li><a href="#location">Ubicación</a></li>
                     <li><a href="#contact">Contacto</a></li>
                     <li><a href="https://hubs.ly/Q02C72330" target="_blank" rel="noopener noreferrer">Brochure</a></li>
                 </ul>
@@ -57,7 +109,6 @@
 
     <!-- Pre-Hero Banner Section -->
     <section id="pre-hero-banner">
-        <!-- Contenido existente -->
         <div class="background-slider">
             <div class="slide"></div>
             <div class="slide"></div>
@@ -78,24 +129,17 @@
     </section>
 
     <main>
-        <!-- ========================== -->
-        <!-- === ORDEN MODIFICADO === -->
-        <!-- ========================== -->
-
-        <!-- 1. About Section (Innovación y Calidad) -->
+        <!-- About Section (Innovación y Calidad) -->
         <section class="aura-block-first">
             <div class="content-wrapper-first">
                 <div class="text-content-block">
                     <h2>RECOMIENDA Y GANA , ¡ASÍ DE FÁCIL!</h2>
                 </div>
                 <div class="action-content">
-                    <!-- Enlace para PC -->
                     <div class="solo-pc">
                         <a href="https://investors-portal-1da8b.web.app/welcome" class="btn btn-secondary"
                             target="_blank" rel="noopener noreferrer">Refiere aqui</a>
                     </div>
-
-                    <!-- Enlace para Móvil -->
                     <div class="solo-movil">
                         <a href="https://investors-portal-1da8b.web.app/welcome" class="btn btn-secondary"
                             target="_blank" rel="noopener noreferrer">Refiere aqui</a>
@@ -103,6 +147,7 @@
                 </div>
             </div>
         </section>
+        
         <section id="about" class="section-bg">
             <div class="angled-divider-top" style="color: var(--light-bg);">
                 <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
@@ -130,13 +175,10 @@
                         </li>
                     </ul>
                     <div class="contenedor">
-                        <!-- Enlace para PC -->
                         <div class="solo-pc">
                             <a href="https://hubs.ly/Q02yhPK20" class="btn btn-secondary" target="_blank"
                                 rel="noopener noreferrer">Ver brochure</a>
                         </div>
-
-                        <!-- Enlace para Móvil -->
                         <div class="solo-movil">
                             <a href="https://hubs.ly/Q02C72330" class="btn btn-secondary" target="_blank"
                                 rel="noopener noreferrer">Ver brochure</a>
@@ -144,12 +186,12 @@
                     </div>
                 </div>
                 <div class="about-image" data-aos="slide-right" data-aos-duration="1000">
-                    <img src="./assets/imagenes/Front/Web-aura.jpg" alt="Render Arquitectónico de AURA Torre Médica">
+                    <img src="./assets/imagenes/Front/Web-aura.jpg" alt="Render Arquitectónico de AURA Torre Médica" width="600" height="400" loading="lazy">
                 </div>
             </div>
         </section>
 
-        <!-- 2. Features Section (Por qué invertir) -->
+        <!-- Features Section (Por qué invertir) -->
         <section id="features">
             <div class="container">
                 <h2 data-aos="fade-up">POR QUÉ INVERTIR EN AURA</h2>
@@ -192,19 +234,17 @@
                 </div>
             </div>
         </section>
+        
         <section class="aura-block">
             <div class="content-wrapper">
                 <div class="text-content-block">
                     <h2>TU NUEVA EXPERIENCIA MÉDICA EN UN SOLO LUGAR</h2>
                 </div>
                 <div class="action-content">
-                    <!-- Enlace para PC -->
                     <div class="solo-pc">
                         <a href="https://hubs.ly/Q02yhPK20" class="btn btn-secondary" target="_blank"
                             rel="noopener noreferrer">Ver brochure</a>
                     </div>
-
-                    <!-- Enlace para Móvil -->
                     <div class="solo-movil">
                         <a href="https://hubs.ly/Q02C72330" class="btn btn-secondary" target="_blank"
                             rel="noopener noreferrer">Ver brochure</a>
@@ -212,44 +252,39 @@
                 </div>
             </div>
         </section>
-        <!-- Fin del Bloque 1 -->
 
-        <!-- 3. Quirófanos Section -->
+        <!-- Quirófanos Section -->
         <section id="quirofanos" class="section-bg">
             <div class="container">
                 <h2 data-aos="fade-up">EL LUJO DE TENERLO TODO, EN UN MISMO LUGAR</h2>
 
-                <!-- Two-column grid for content and main image -->
                 <div class="quirofanos-grid">
                     <div class="quirofanos-content" data-aos="fade-right" data-aos-delay="200">
                         <h3>Aura contará con zona de Quirófanos</h3>
                         <ul>
                             <li>
-                                <!-- Make sure Font Awesome is linked in your project for the icon -->
                                 <i class="fas fa-procedures"></i>
                                 Pabellón de cirugía equipado para mediana y alta complejidad.
                             </li>
-                            <!-- Add more list items here if needed -->
                         </ul>
                         <h3>¿Deseas agendar una cita?</h3>
-                        <div class="contenedor-boton"> <!-- Changed class for clarity -->
+                        <div class="contenedor-boton">
                             <a href="https://meetings.hubspot.com/maicol-navarro/aura-cita-por-pagina-web"
                                 target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Agéndate Aqui</a>
                         </div>
                     </div>
                     <div class="quirofanos-image" data-aos="fade-left" data-aos-delay="200">
                         <img src="./assets/imagenes/quirofanos/Quirofanos.jpg"
-                            alt="Quirófanos modernos en Aura Torre Médica">
+                            alt="Quirófanos modernos en Aura Torre Médica" width="600" height="400" loading="lazy">
                     </div>
                 </div>
-                <!-- End of two-column grid -->
 
                 <div class="premium-gallery-container">
                     <div class="gallery-grid">
                         <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
                             <div class="slider-container">
                                 <div class="slider-images">
-                                    <img src="./assets/imagenes/Consultorio/Vitaly CO.png" alt="Cafe Bar">
+                                    <img src="./assets/imagenes/Consultorio/Vitaly CO.png" alt="Consultorio Vitaly en Aura Torre Médica" loading="lazy">
                                 </div>
                             </div>
                             <div class="overlay-content">
@@ -259,7 +294,7 @@
                         <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
                             <div class="slider-container">
                                 <div class="slider-images">
-                                    <img src="./assets/imagenes/Consultorio/Esscence1 CO.png" alt="Sala de espera">
+                                    <img src="./assets/imagenes/Consultorio/Esscence1 CO.png" alt="Consultorio Essence en Aura Torre Médica" loading="lazy">
                                 </div>
                             </div>
                             <div class="overlay-content">
@@ -269,7 +304,7 @@
                         <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
                             <div class="slider-container">
                                 <div class="slider-images">
-                                    <img src="./assets/imagenes/Consultorio/Serenity 1 CO.png" alt="Recepcion">
+                                    <img src="./assets/imagenes/Consultorio/Serenity 1 CO.png" alt="Consultorio Serenity en Aura Torre Médica" loading="lazy">
                                 </div>
                             </div>
                             <div class="overlay-content">
@@ -278,11 +313,10 @@
                         </div>
                     </div>
                 </div>
-
-            </div> <!-- End of container -->
+            </div>
         </section>
 
-        <!-- 4. Location Section -->
+        <!-- Location Section -->
         <section id="location" class="section-bg">
             <div class="container">
                 <div class="location-info" data-aos="fade-right" data-aos-duration="900">
@@ -303,20 +337,20 @@
                 </div>
                 <div class="image-map-row" data-aos="fade-left" data-aos-delay="100" data-aos-duration="900">
                     <div class="location-image">
-                        <img src="./assets/imagenes/Front/Ubicacion-02.jpg" alt="Ubicación del edificio Aura">
+                        <img src="./assets/imagenes/Front/Ubicacion-02.jpg" alt="Ubicación estratégica de Aura Torre Médica en Barranquilla" width="600" height="400" loading="lazy">
                     </div>
                     <div class="location-map">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3941.9273226121118!2d-74.82340072497148!3d11.0063492549107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef42d29b5189fff%3A0x1418bb7c14d9c465!2sAurora%20Torre%20M%C3%A9dica!5e1!3m2!1ses!2sco!4v1743707657262!5m2!1ses!2sco"
                             allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                            title="Mapa de Ubicación Aura Torre Médica">
+                            title="Mapa de Ubicación Aura Torre Médica en Barranquilla">
                         </iframe>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 5. Nearby Places Section (MOVIDA AQUÍ, DESPUÉS DE UBICACIÓN) -->
+        <!-- Nearby Places Section -->
         <section id="nearby-places" class="section-bg">
             <div class="container">
                 <h2 data-aos="fade-up">SABEMOS QUE EL TIEMPO ES VALIOSO PARA TI <br> EN AURA ESTARÁS CERCA A:</h2>
@@ -326,18 +360,18 @@
                 <div class="contenedor-img" data-aos="fade-up" data-aos-delay="100">
                     <div class="tarjeta">
                         <img src="./assets/imagenes/Ubicaciones/Centro Comercial Viva-min.png"
-                            alt="Centro Comercial Viva" class="imagen">
+                            alt="Centro Comercial Viva cerca de Aura Torre Médica" class="imagen" loading="lazy">
                         <div class="texto-base">Viva</div>
                         <div class="texto-hover"> A 1 minuto </div>
                     </div>
                     <div class="tarjeta">
-                        <img src="./assets/imagenes/Ubicaciones/Plaza 51-min.png" alt="Plaza 51" class="imagen">
+                        <img src="./assets/imagenes/Ubicaciones/Plaza 51-min.png" alt="Plaza 51 cerca de Aura Torre Médica" class="imagen" loading="lazy">
                         <div class="texto-base">Plaza 51</div>
                         <div class="texto-hover">A 1 minuto</div>
                     </div>
                     <div class="tarjeta">
                         <img src="./assets/imagenes/Ubicaciones/Centro Comercial Buenavista-min.png"
-                            alt="Centro Comercial Buenavista" class="imagen">
+                            alt="Centro Comercial Buenavista cerca de Aura Torre Médica" class="imagen" loading="lazy">
                         <div class="texto-base">Buenavista</div>
                         <div class="texto-hover"> A 8 minutos</div>
                     </div>
@@ -347,19 +381,18 @@
                     CLÍNICAS Y HOTELES</h2>
                 <div class="contenedor-img" data-aos="fade-up" data-aos-delay="100">
                     <div class="tarjeta">
-                        <img src="./assets/imagenes/Ubicaciones/Clinica Iberoamerica-min.png" alt="Clínica Iberoamérica"
-                            class="imagen">
+                        <img src="./assets/imagenes/Ubicaciones/Clinica Iberoamerica-min.png" alt="Clínica Iberoamérica cerca de Aura Torre Médica"
+                            class="imagen" loading="lazy">
                         <div class="texto-base">Clínica Iberoamerica</div>
                         <div class="texto-hover">A 1 minuto </div>
                     </div>
                     <div class="tarjeta">
-                        <img src="./assets/imagenes/Ubicaciones/Hotel Hampton-min.png" alt="Hotel Hampton"
-                            class="imagen">
+                        <img src="./assets/imagenes/Ubicaciones/Hotel Hampton-min.png" alt="Hotel Hampton cerca de Aura Torre Médica" class="imagen" loading="lazy">
                         <div class="texto-base">Hotel Hampton</div>
                         <div class="texto-hover">A 3 minutos</div>
                     </div>
                     <div class="tarjeta">
-                        <img src="./assets/imagenes/Ubicaciones/Hotel Ibis-min.png" alt="Hotel Ibis" class="imagen">
+                        <img src="./assets/imagenes/Ubicaciones/Hotel Ibis-min.png" alt="Hotel Ibis cerca de Aura Torre Médica" class="imagen" loading="lazy">
                         <div class="texto-base">Hotel Ibis</div>
                         <div class="texto-hover">A 1 minuto</div>
                     </div>
@@ -369,39 +402,38 @@
                     CERCA DE TUS PACIENTES</h2>
                 <div class="contenedor-img" data-aos="fade-up" data-aos-delay="100">
                     <div class="tarjeta">
-                        <img src="./assets/imagenes/Ubicaciones/Riomar.png" alt="Barrio Riomar" class="imagen">
+                        <img src="./assets/imagenes/Ubicaciones/Riomar.png" alt="Barrio Riomar cerca de Aura Torre Médica" class="imagen" loading="lazy">
                         <div class="texto-base">Riomar</div>
                         <div class="texto-hover"> A 2 MINUTOS </div>
                     </div>
                     <div class="tarjeta">
-                        <img src="./assets/imagenes/Ubicaciones/Golf-min.png" alt="Barrio El Golf" class="imagen">
+                        <img src="./assets/imagenes/Ubicaciones/Golf-min.png" alt="Barrio El Golf cerca de Aura Torre Médica" class="imagen" loading="lazy">
                         <div class="texto-base">El Golf</div>
                         <div class="texto-hover">A 5 minutos</div>
                     </div>
                     <div class="tarjeta">
-                        <img src="./assets/imagenes/Ubicaciones/Alto prado-min.png" alt="Barrio Alto Prado"
-                            class="imagen">
+                        <img src="./assets/imagenes/Ubicaciones/Alto prado-min.png" alt="Barrio Alto Prado cerca de Aura Torre Médica"
+                            class="imagen" loading="lazy">
                         <div class="texto-base">Alto prado</div>
                         <div class="texto-hover">A 6 minutos</div>
                     </div>
                 </div>
             </div>
         </section>
+        
         <section class="aura-block">
             <div class="content-wrapper">
                 <div class="text-content-block">
                     <h2>AGENDA TU CITA CON UNO DE NUESTROS ASESORES</h2>
                 </div>
                 <div class="action-content">
-                    <!-- Puedes poner un botón como en tu ejemplo o cualquier otro contenido -->
                     <a href="https://meetings.hubspot.com/maicol-navarro/aura-cita-por-pagina-web" target="_blank"
                         rel="noopener noreferrer" class="aura-button">Agéndate Aqui</a>
                 </div>
             </div>
         </section>
-        <!-- Fin del Bloque 1 -->
 
-        <!-- 6. Gallery Section (Consultorios) -->
+        <!-- Gallery Section (Consultorios) -->
         <section id="gallery" class="section-bg">
             <div class="container">
                 <h2 data-aos="fade-up">NUESTROS CONSULTORIOS</h2>
@@ -424,9 +456,9 @@
                         <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
                             <div class="slider-container">
                                 <div class="slider-images">
-                                    <img src="./assets/imagenes/Consultorios/Vitaly-1.jpg" alt="Vitaly 1">
-                                    <img src="./assets/imagenes/Consultorios/Vitaly-2.jpg" alt="Vitaly 2">
-                                    <img src="./assets/imagenes/Consultorios/Vitaly-3.jpg" alt="Vitaly 3">
+                                    <img src="./assets/imagenes/Consultorios/Vitaly-1.jpg" alt="Consultorio Vitaly en Aura Torre Médica - Vista 1" loading="lazy">
+                                    <img src="./assets/imagenes/Consultorios/Vitaly-2.jpg" alt="Consultorio Vitaly en Aura Torre Médica - Vista 2" loading="lazy">
+                                    <img src="./assets/imagenes/Consultorios/Vitaly-3.jpg" alt="Consultorio Vitaly en Aura Torre Médica - Vista 3" loading="lazy">
                                 </div>
                                 <div class="slider-nav"><button class="prev-btn" aria-label="Anterior"><i
                                             class="fas fa-chevron-left"></i></button><button class="next-btn"
@@ -443,7 +475,7 @@
                         <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
                             <div class="slider-container">
                                 <div class="slider-images">
-                                    <img src="./assets/imagenes/Consultorio/Vitaly CO.png" alt="Vitaly Example 1">
+                                    <img src="./assets/imagenes/Consultorio/Vitaly CO.png" alt="Consultorio Vitaly en Aura Torre Médica - Diseño" loading="lazy">
                                 </div>
                                 <button class="zoom-btn" aria-label="Ampliar imagen"><i
                                         class="fas fa-search-plus"></i></button>
@@ -471,9 +503,9 @@
                         <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
                             <div class="slider-container">
                                 <div class="slider-images">
-                                    <img src="./assets/imagenes/Consultorios/Essence-1.jpg" alt="Essence 1">
-                                    <img src="./assets/imagenes/Consultorios/Essence-2.jpg" alt="Essence 2">
-                                    <img src="./assets/imagenes/Consultorios/Essence 3.jpg" alt="Essence 3">
+                                    <img src="./assets/imagenes/Consultorios/Essence-1.jpg" alt="Consultorio Essence en Aura Torre Médica - Vista 1" loading="lazy">
+                                    <img src="./assets/imagenes/Consultorios/Essence-2.jpg" alt="Consultorio Essence en Aura Torre Médica - Vista 2" loading="lazy">
+                                    <img src="./assets/imagenes/Consultorios/Essence 3.jpg" alt="Consultorio Essence en Aura Torre Médica - Vista 3" loading="lazy">
                                 </div>
                                 <div class="slider-nav"><button class="prev-btn" aria-label="Anterior"><i
                                             class="fas fa-chevron-left"></i></button><button class="next-btn"
@@ -490,7 +522,7 @@
                         <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
                             <div class="slider-container">
                                 <div class="slider-images">
-                                    <img src="./assets/imagenes/Consultorio/Esscence1 CO.png" alt="Essence Example 1">
+                                    <img src="./assets/imagenes/Consultorio/Esscence1 CO.png" alt="Consultorio Essence en Aura Torre Médica - Diseño" loading="lazy">
                                 </div>
                                 <button class="zoom-btn" aria-label="Ampliar imagen"><i
                                         class="fas fa-search-plus"></i></button>
@@ -518,9 +550,9 @@
                         <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
                             <div class="slider-container">
                                 <div class="slider-images">
-                                    <img src="./assets/imagenes/Consultorios/Serenity-1.jpg" alt="Serenity 1">
-                                    <img src="./assets/imagenes/Consultorios/Serenity-2.jpg" alt="Serenity 2">
-                                    <img src="./assets/imagenes/Consultorios/Serenity-3.jpg" alt="Serenity 3">
+                                    <img src="./assets/imagenes/Consultorios/Serenity-1.jpg" alt="Consultorio Serenity en Aura Torre Médica - Vista 1" loading="lazy">
+                                    <img src="./assets/imagenes/Consultorios/Serenity-2.jpg" alt="Consultorio Serenity en Aura Torre Médica - Vista 2" loading="lazy">
+                                    <img src="./assets/imagenes/Consultorios/Serenity-3.jpg" alt="Consultorio Serenity en Aura Torre Médica - Vista 3" loading="lazy">
                                 </div>
                                 <div class="slider-nav"><button class="prev-btn" aria-label="Anterior"><i
                                             class="fas fa-chevron-left"></i></button><button class="next-btn"
@@ -537,7 +569,7 @@
                         <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
                             <div class="slider-container">
                                 <div class="slider-images">
-                                    <img src="./assets/imagenes/Consultorio/Serenity 1 CO.png" alt="Serenity Example 1">
+                                    <img src="./assets/imagenes/Consultorio/Serenity 1 CO.png" alt="Consultorio Serenity en Aura Torre Médica - Diseño" loading="lazy">
                                 </div>
                                 <button class="zoom-btn" aria-label="Ampliar imagen"><i
                                         class="fas fa-search-plus"></i></button>
@@ -559,14 +591,14 @@
         </section>
 
 
-        <!-- 7. Amenities Section (En Aura contarás con) -->
+        <!-- Amenities Section (En Aura contarás con) -->
         <section id="amenities" class="section-bg">
             <div class="container">
                 <h2 data-aos="fade-up" style="margin-bottom: 3rem;">EN AURA CONTARÁS CON</h2>
 
                 <div class="amenity-top-row">
                     <div class="about-image" data-aos="slide-right" data-aos-duration="1000">
-                        <img src="./assets/imagenes/Consultorio/Rooftop.png" alt="Rooftop">
+                        <img src="./assets/imagenes/Consultorio/Rooftop.png" alt="Rooftop en Aura Torre Médica" width="600" height="400" loading="lazy">
                     </div>
                     <div class="about-content" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
                         <ul>
@@ -583,7 +615,7 @@
                         <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
                             <div class="slider-container">
                                 <div class="slider-images">
-                                    <img src="./assets/imagenes/Zonas Comunes/Aura Café.png" alt="Cafe Bar">
+                                    <img src="./assets/imagenes/Zonas Comunes/Aura Café.png" alt="Café Bar en Aura Torre Médica" loading="lazy">
                                 </div>
                             </div>
                             <div class="overlay-content">
@@ -593,7 +625,7 @@
                         <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
                             <div class="slider-container">
                                 <div class="slider-images">
-                                    <img src="./assets/imagenes/Consultorio/Rooftop2.png" alt="Sala de espera">
+                                    <img src="./assets/imagenes/Consultorio/Rooftop2.png" alt="Lounge en Aura Torre Médica" loading="lazy">
                                 </div>
                             </div>
                             <div class="overlay-content">
@@ -604,7 +636,7 @@
                             <div class="slider-container">
                                 <div class="slider-images">
                                     <img src="./assets/imagenes/Zonas Comunes/V2 RECEPCIÓN (corrección).jpg"
-                                        alt="Recepcion">
+                                        alt="Recepción en Aura Torre Médica" loading="lazy">
                                 </div>
                             </div>
                             <div class="overlay-content">
@@ -615,21 +647,20 @@
                 </div>
             </div>
         </section>
+        
         <section class="aura-block">
             <div class="content-wrapper">
                 <div class="text-content-block">
                     <h2>CONOCE DONDE ESTAMOS UBICADOS</h2>
                 </div>
                 <div class="action-content">
-                    <!-- Puedes poner un botón como en tu ejemplo o cualquier otro contenido -->
                     <a href="https://maps.app.goo.gl/f79Ks2K1nwoF1yb58" class="aura-button" target="_blank"
                         rel="noopener noreferrer">Ubicación</a>
-
                 </div>
             </div>
         </section>
-        <!-- Fin del Bloque 1 -->
-        <!-- 8. Our Team Section -->
+
+        <!-- Our Team Section -->
         <section id="our-team" class="section-bg">
             <div class="container">
                 <div class="section-title" data-aos="fade-up">
@@ -639,7 +670,7 @@
                     <div class="col-lg-4 col-md-6 team-member">
                         <div class="member-content">
                             <div class="member-logo">
-                                <img src="./assets/imagenes/Logo/Inciti (Isotipo).png" alt="Logo Inciti">
+                                <img src="./assets/imagenes/Logo/Inciti (Isotipo).png" alt="Logo Inciti - Desarrolladores de Aura Torre Médica" loading="lazy">
                             </div>
                             <h4>Inciti</h4>
                             <p>Desarrollamos proyectos que transforman ciudades creando comunidades inteligentes y
@@ -649,7 +680,7 @@
                     <div class="col-lg-4 col-md-6 team-member">
                         <div class="member-content">
                             <div class="member-logo">
-                                <img src="./assets/imagenes/Logo/logo pubenza.png" alt="Logo Pubenza">
+                                <img src="./assets/imagenes/Logo/logo pubenza.png" alt="Logo Pubenza - Constructores de Aura Torre Médica" loading="lazy">
                             </div>
                             <h4>Pubenza</h4>
                             <p>Constructor con más de 30 años de experiencia en la edificación, construcción de
@@ -660,7 +691,7 @@
                         <div class="member-content">
                             <div class="member-logo">
                                 <img src="./assets/imagenes/Logo/LOGO ALIANZA FIDUCIARIA_POSITIVO.png"
-                                    alt="Logo Alianza Fiduciaria">
+                                    alt="Logo Alianza Fiduciaria - Socios de Aura Torre Médica" loading="lazy">
                             </div>
                             <h4>Alianza Fiduciaria</h4>
                             <p>Alianza Fiduciaria y Alianza Valores son compañías líderes en el mercado colombiano en
@@ -671,7 +702,7 @@
                         <div class="member-content">
                             <div class="member-logo">
                                 <img src="./assets/imagenes/Logo/HDQ.png"
-                                    alt="Logo HDQ">
+                                    alt="Logo HDQ - Socios estratégicos de Aura Torre Médica" loading="lazy">
                             </div>
                             <h4>HDQ</h4>
                             <p>Aliado estratégico lìder en infraestructura y gestion hospitalaria, reconocifa por
@@ -683,7 +714,7 @@
                     <div class="tarjeta-inciti">
                         <div class="tarjeta-inciti-imagen-contenedor">
                             <img src="/assets/imagenes/Ubicaciones/equipo_inciti.jpg"
-                                alt="Personas en una presentación - INCITI" class="tarjeta-inciti-imagen-fondo">
+                                alt="Equipo de Inciti - Desarrolladores de Aura Torre Médica" class="tarjeta-inciti-imagen-fondo" loading="lazy">
                             <div class="tarjeta-inciti-superposicion-gris"></div>
                         </div>
                         <div class="tarjeta-inciti-contenido">
@@ -692,13 +723,11 @@
                             </div>
                             <div class="tarjeta-inciti-logo-texto">
                                 <img src="/assets/imagenes/Logo/Logo inciti (blanco)_Mesa de trabajo 1.png"
-                                    alt="Logo INCITI" class="tarjeta-inciti-logo">
+                                    alt="Logo Inciti en blanco" class="tarjeta-inciti-logo" loading="lazy">
                             </div>
                             <div class="action-content">
-                                <!-- Puedes poner un botón como en tu ejemplo o cualquier otro contenido -->
                                 <a href="https://inciti.co/" class="aura-button" target="_blank"
                                     rel="noopener noreferrer">Màs informaciòn</a>
-
                             </div>
                         </div>
                     </div>
@@ -707,7 +736,7 @@
         </section>
 
 
-        <!-- 9. Contact Section -->
+        <!-- Contact Section -->
         <section id="contact" class="section-dark">
             <div class="container text-center">
                 <h2 data-aos="fade-up">FORMA PARTE DEL FUTURO DE LA SALUD</h2>
@@ -724,7 +753,6 @@
                             region: "na1"
                         });
                     </script>
-                    <!-- End HubSpot Form Embed Code -->
                 </div>
             </div>
         </section>
@@ -735,15 +763,21 @@
     <!-- Footer -->
     <footer id="main-footer">
         <div class="container">
-            <a href="#pre-hero-banner" class="footer-logo">
-                <img src="./assets/imagenes/Logo/Aura torre medica-02.png" alt="AURA Logo Footer">
+            <a href="#pre-hero-banner" class="footer-logo" aria-label="Aura Torre Médica - Inicio">
+                <img src="./assets/imagenes/Logo/Aura torre medica-02.png" alt="AURA Logo Footer" width="180" height="60" loading="lazy">
             </a>
             <div class="container-footer">
+                <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                    <span itemprop="streetAddress">Calle 86 # 50 - 87</span>,
+                    <span itemprop="addressLocality">Barranquilla</span>,
+                    <span itemprop="addressRegion">Atlántico</span>,
+                    <span itemprop="addressCountry">Colombia</span>
+                </div>
                 <p>© <span id="current-year"></span> Aura Torre Médica. Desarrollado por <a href="https://inciti.co"
                         target="_blank" rel="noopener noreferrer"> Inciti.co</a>. Todos los derechos reservados.</p>
                 <div class="social-icons">
                     <a href="https://www.instagram.com/auratorremedica?igsh=cmtiMWZjemd6cDg0"
-                        aria-label="Instagram de AURA" target="_blank" rel="noopener noreferrer"><i
+                        aria-label="Instagram de AURA Torre Médica" target="_blank" rel="noopener noreferrer"><i
                             class="fab fa-instagram"></i></a>
                 </div>
                 <p style="font-size: 0.6em; line-height: 1.4;">
@@ -764,16 +798,12 @@
                     contenido del sitio.
                     Toda la información aquí publicada, deberá ser verificada por usted mismo.</p>
             </div>
-            <!-- <div class="social-icons">
-                <a href="https://www.instagram.com/auratorremedica?igsh=cmtiMWZjemd6cDg0" aria-label="Instagram de AURA"
-                    target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-            </div> -->
         </div>
     </footer>
 
     <!-- === BOTÓN FLOTANTE DE WHATSAPP (MODIFIED POSITIONING) === -->
     <a href="https://wa.link/hnuduc" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
-        aria-label="Contactar por WhatsApp">
+        aria-label="Contactar a Aura Torre Médica por WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
