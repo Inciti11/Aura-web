@@ -755,33 +755,6 @@ main,
     }
 }
 
-/* --- Divisores de Sección Creativos --- */
-.angled-divider-top,
-.angled-divider-bottom {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    line-height: 0;
-    z-index: 10;
-    overflow: hidden; /* Prevent potential SVG overflow */
-}
-.angled-divider-top {
-    top: -1px; /* Adjust overlap slightly if needed */
-}
-.angled-divider-bottom {
-    bottom: -1px; /* Adjust overlap slightly if needed */
-    transform: rotate(180deg);
-}
-
-.angled-divider-top svg,
-.angled-divider-bottom svg {
-    display: block;
-    width: 100%;
-    height: auto; /* Allow height to scale */
-    fill: var(--primary-color) #013f33 ;
-;
-}
-
 
 .shape-fill {
     fill: #fff
