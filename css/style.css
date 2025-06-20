@@ -780,6 +780,7 @@ main,
     align-items: center;
 }
 
+
 #about .about-image {
     position: relative;
 }
@@ -2619,4 +2620,46 @@ main,
 
 body.mobile-nav-active {
     overflow: hidden;
+}
+/* --- ESTILOS AÑADIDOS PARA MEJORAR LA SECCIÓN DE QUIRÓFANOS --- */
+
+/* Ajusta el espaciado y estilo general de la lista de beneficios en la sección de quirófanos */
+#quirofanos .quirofanos-content ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 2.5rem; /* Aumenta el espacio sobre la lista */
+    margin-bottom: 2.5rem; /* Aumenta el espacio debajo de la lista */
+}
+
+/* Define el estilo de cada elemento de la lista (ítem) */
+#quirofanos .quirofanos-content ul li {
+    padding-left: 45px; /* Espacio a la izquierda para el icono */
+    position: relative;
+    margin-bottom: 1.8rem; /* Espacio entre cada ítem de la lista */
+    font-size: 1.05rem;
+    color: var(--dark-text);
+    line-height: 1.6;
+}
+
+/* Define el estilo del icono dentro de cada elemento de la lista */
+#quirofanos .quirofanos-content ul li i {
+    position: absolute;
+    left: 0;
+    top: 5px; /* Ajuste vertical del icono */
+    color: var(--secondary-color); /* Color del icono */
+    font-size: 1.2rem;
+    width: 30px; /* Ancho del círculo de fondo */
+    height: 30px; /* Alto del círculo de fondo */
+    background-color: rgba(40, 176, 152, 0.1); /* Fondo del círculo semitransparente */
+    border-radius: 50%; /* Hace que el fondo sea un círculo perfecto */
+    display: inline-flex;
+    align-items: center; /* Centra el icono verticalmente en el círculo */
+    justify-content: center; /* Centra el icono horizontalmente en el círculo */
+}
+
+/* Mejora el texto dentro del ítem de la lista para que sea más legible */
+#quirofanos .quirofanos-content ul li strong {
+    color: var(--primary-color); /* Da un color más oscuro y prominente al texto en negrita */
+    display: block; /* Hace que el título del ítem ocupe su propia línea */
+    margin-bottom: 0.3rem; /* Pequeño espacio entre el título y la descripción */
 }
